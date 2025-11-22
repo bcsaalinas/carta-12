@@ -1,20 +1,28 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Carta 12 — sitio experimental
 
-# Run and deploy your AI Studio app
+Experiencia web para el concepto gastronómico mensual de Carta 12. Incluye landing animada, menú dinámico y concierge asistido por Gemini para dudas y reservas.
 
-This contains everything you need to run your app locally.
+## Stack
+- React + TypeScript (Vite)
+- GSAP para animaciones
+- Tailwind (CDN) para estilos utilitarios
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## Requisitos
+- Node.js 18+
+- Llave de API de Gemini (`GEMINI_API_KEY`)
 
-## Run Locally
+## Cómo correrlo
+1) Instala dependencias: `npm install`  
+2) Crea `.env.local` con `GEMINI_API_KEY=tu_token`  
+3) Arranca en modo dev: `npm run dev`  
+4) Build de producción (salida en `dist/`): `npm run build`
 
-**Prerequisites:**  Node.js
+## Estructura rápida
+- `constants.ts`: datos del volumen actual y menú.
+- `components/`: hero, concepto, menú, concierge, loader, navbar y footer.
+- `services/geminiService.ts`: llamada al modelo para el concierge.
+- `types.ts`: tipos compartidos para platillos, conceptos y mensajes.
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Notas
+- Animaciones basadas en GSAP y ScrollTrigger; muchas dependen de breakpoints desktop.
+- El concierge requiere la variable `GEMINI_API_KEY` para responder. Sin ella, solo se verá el saludo inicial.

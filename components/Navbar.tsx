@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
 
-    // Progress Bar
+    // scroll progress bar
     gsap.to("#progress-bar", {
       width: "100%",
       ease: "none",

@@ -16,7 +16,7 @@ const CustomCursor = () => {
     const cursor = cursorRef.current;
     const follower = followerRef.current;
     
-    // Only run on desktop
+    // only run on desktop
     if (window.innerWidth < 768) return;
 
     const moveCursor = (e: MouseEvent) => {
@@ -46,7 +46,7 @@ const CustomCursor = () => {
 
     window.addEventListener('mousemove', moveCursor);
     
-    // Add event listeners to clickable elements
+    // track hover on clickable items
     const clickables = document.querySelectorAll('button, a, .cursor-hover');
     clickables.forEach(el => {
        el.addEventListener('mouseenter', handleHover);
@@ -80,7 +80,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   return (
-    // Only hide cursor on md (desktop) screens. Mobile keeps default interaction.
+    // hide custom cursor only on desktop
     <div className="bg-stone-950 min-h-screen text-stone-200 selection:bg-[#ff4d00] selection:text-black md:cursor-none cursor-auto overflow-x-hidden">
       <CustomCursor />
       

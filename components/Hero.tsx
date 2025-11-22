@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Initial Load Animation
+    // intro animation
     gsap.set(".hero-text-line", { y: 100, opacity: 0 });
     
     tl.to(videoBgRef.current, {
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       "-=0.5"
     );
 
-    // Scroll Parallax
+    // scroll parallax
     gsap.to(titleWrapperRef.current, {
       yPercent: 50,
       ease: "none",
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
   return (
     <section ref={containerRef} className="relative h-[100dvh] min-h-[600px] w-full flex flex-col items-center justify-center overflow-hidden bg-stone-950">
       
-      {/* Dynamic Background */}
+      {/* background layers */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <div ref={videoBgRef} className="absolute inset-0 scale-110">
            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2668&auto=format&fit=crop')] bg-cover bg-center opacity-40 grayscale mix-blend-luminosity"></div>
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
         </div>
 
         <div ref={titleWrapperRef} className="relative mix-blend-difference flex flex-col items-center">
-          {/* Use Viewport Width (vw) units for perfect scaling on all devices */}
+          {/* using vw for scaling */}
           <div className="overflow-hidden w-full flex justify-center">
             <h1 className="hero-text-line text-[18vw] font-display font-black text-white tracking-tighter uppercase leading-[0.85]">
               CARTA

@@ -11,7 +11,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Counter Animation
+    // simple loading counter
     const interval = setInterval(() => {
       setCount(prev => {
         if (prev >= 100) {

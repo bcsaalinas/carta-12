@@ -14,7 +14,7 @@ const Concept: React.FC = () => {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
-      // Desktop Animation (Horizontal Scroll)
+      // desktop horizontal scroll
       mm.add("(min-width: 768px)", () => {
         const sections = gsap.utils.toArray(".story-panel");
 
@@ -30,7 +30,7 @@ const Concept: React.FC = () => {
           },
         });
 
-        // Desktop Parallax
+        // desktop parallax
         sections.forEach((section: any) => {
           const img = section.querySelector(".parallax-img");
           if (img) {
@@ -49,7 +49,7 @@ const Concept: React.FC = () => {
         });
       });
 
-      // Mobile Animation (Simple Fade In)
+      // mobile fade in
       mm.add("(max-width: 767px)", () => {
         const sections = gsap.utils.toArray(".story-panel");
         sections.forEach((section: any) => {
@@ -76,12 +76,12 @@ const Concept: React.FC = () => {
       ref={sectionRef}
       className="bg-stone-950 overflow-hidden w-full"
     >
-      {/* Container: Vertical on Mobile, Horizontal on Desktop */}
+      {/* stacked on mobile, horizontal on desktop */}
       <div
         ref={triggerRef}
         className="flex flex-col md:flex-row w-full md:w-[300vw] h-auto md:h-[100vh] relative"
       >
-        {/* PANEL 1: THE HOOK */}
+        {/* panel 1 */}
         <div className="story-panel w-full md:w-screen min-h-[100dvh] md:h-screen relative flex items-center justify-center border-b md:border-b-0 md:border-r border-stone-900/50 bg-stone-950 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=2665&auto=format&fit=crop')] bg-cover bg-center opacity-20 grayscale mix-blend-overlay"></div>
 
@@ -90,7 +90,7 @@ const Concept: React.FC = () => {
               Capítulo 01: El Problema
             </span>
 
-            {/* Typography adjusted for mobile fit */}
+            {/* mobile friendly type */}
             <h2 className="text-[8.5vw] md:text-7xl lg:text-9xl font-display font-black text-white leading-[1.1] md:leading-[0.85] uppercase mix-blend-difference">
               La <br className="block md:hidden" />
               Permanencia
@@ -123,7 +123,7 @@ const Concept: React.FC = () => {
           </div>
         </div>
 
-        {/* PANEL 2: THE SOLUTION */}
+        {/* panel 2 */}
         <div className="story-panel w-full md:w-screen min-h-[100dvh] md:h-screen relative flex items-center bg-[#0c0a09] overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
             <div className="h-full w-full bg-stone-950 relative overflow-hidden hidden md:block">
@@ -131,7 +131,7 @@ const Concept: React.FC = () => {
                 CHAOS
               </div>
             </div>
-            {/* Mobile Background / Desktop Side Panel */}
+            {/* side image */}
             <div className="h-full w-full bg-stone-900 relative overflow-hidden absolute md:relative inset-0 md:inset-auto z-0 md:z-auto">
               <img
                 src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop"
@@ -167,14 +167,14 @@ const Concept: React.FC = () => {
           </div>
         </div>
 
-        {/* PANEL 3: THE CURRENT REALITY */}
+        {/* panel 3 */}
         <div className="story-panel w-full md:w-screen min-h-[100dvh] md:h-screen relative flex items-center justify-center bg-[#ff4d00] text-black overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
 
           <div className="mobile-content w-full px-6 lg:px-0 max-w-[100vw] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center relative z-10 py-24 md:py-0">
             <div className="lg:col-span-7 flex flex-col justify-center z-30 order-2 lg:order-1 lg:pl-20">
               <div className="border-b-4 border-black pb-4 lg:pb-8 mb-6 lg:mb-8">
-                {/* Adjusted size for mobile fit */}
+                {/* fits on mobile */}
                 <h2 className="text-[15vw] lg:text-[10rem] font-display font-black leading-[0.9] lg:leading-[0.8] tracking-tighter uppercase break-words relative">
                   AHORA.
                 </h2>

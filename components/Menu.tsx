@@ -14,7 +14,7 @@ const Menu: React.FC = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       
-      // Stock Ticker Animation
+      // ticker scroll animation
       gsap.to(".ticker-track", {
         xPercent: -50,
         ease: "none",
@@ -22,7 +22,7 @@ const Menu: React.FC = () => {
         repeat: -1
       });
 
-      // Reveal List Animation
+      // fade rows on scroll
       gsap.utils.toArray('.menu-row').forEach((row: any) => {
         gsap.from(row, {
           opacity: 0,
@@ -35,7 +35,7 @@ const Menu: React.FC = () => {
         });
       });
 
-      // Image Reveal Follower Logic - Only on Desktop
+      // cursor image on desktop
       const xTo = gsap.quickTo(revealImgRef.current, "x", {duration: 0.4, ease: "power3"});
       const yTo = gsap.quickTo(revealImgRef.current, "y", {duration: 0.4, ease: "power3"});
 
@@ -54,7 +54,7 @@ const Menu: React.FC = () => {
   }, []);
 
   const handleMouseEnter = (img: string | undefined) => {
-    if (!img || window.innerWidth < 1024) return; // Disable on mobile/tablet
+    if (!img || window.innerWidth < 1024) return; // skip on small screens
     setActiveImage(img);
     if (revealImgRef.current) {
         gsap.to(revealImgRef.current, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.7)" });
@@ -75,7 +75,7 @@ const Menu: React.FC = () => {
       className="bg-stone-950 text-stone-200 pb-32 relative z-20 overflow-hidden cursor-default w-full"
     >
       
-      {/* Stock Ticker */}
+      {/* ticker strip */}
       <div className="w-full bg-[#ff4d00] text-black py-2 overflow-hidden border-y border-black relative z-30 mb-16 md:mb-20">
         <div className="ticker-track flex gap-8 whitespace-nowrap font-mono text-[9px] md:text-xs font-bold uppercase tracking-widest">
            {[...Array(10)].map((_, i) => (
@@ -95,7 +95,7 @@ const Menu: React.FC = () => {
         </div>
       </div>
 
-      {/* Floating Reveal Image - STRICTLY HIDDEN ON MOBILE/TABLET (lg breakpoint) */}
+      {/* hover image for desktop */}
       <img 
         ref={revealImgRef}
         src={activeImage}
@@ -129,7 +129,7 @@ const Menu: React.FC = () => {
 
             return (
               <div key={cat} className="relative">
-                {/* Background Number - Lower opacity on mobile */}
+                {/* faint section number */}
                 <div className="absolute -top-12 md:-top-16 -left-2 md:-left-4 font-display text-[20vw] md:text-[12rem] text-stone-900/30 md:text-stone-900/50 font-black -z-10 select-none leading-none pointer-events-none">
                   0{catIdx + 1}
                 </div>
@@ -165,7 +165,7 @@ const Menu: React.FC = () => {
                                {dish.description}
                             </p>
                             
-                            {/* Mobile Image Display - Aspect Video for standard sizing */}
+                            {/* mobile image box */}
                             <div className="lg:hidden w-full mt-6 mb-2 aspect-video overflow-hidden border border-stone-800 bg-stone-900 relative rounded-sm shadow-lg">
                                 {dish.image ? (
                                   <img 

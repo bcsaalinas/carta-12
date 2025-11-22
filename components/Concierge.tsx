@@ -50,7 +50,7 @@ const Concierge: React.FC = () => {
 
       {isOpen && (
         <div className="bg-black border border-stone-800 w-[90vw] md:w-[400px] h-[60vh] md:h-[500px] shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300 rounded-lg">
-          {/* Header */}
+          {/* header */}
           <div className="bg-stone-900 p-3 flex justify-between items-center border-b border-stone-800">
             <div className="flex items-center gap-2 text-[#ff4d00]">
               <Terminal size={16} />
@@ -61,7 +61,7 @@ const Concierge: React.FC = () => {
             </button>
           </div>
 
-          {/* Messages */}
+          {/* messages */}
           <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-black/95">
             {messages.map((msg, idx) => (
               <div key={idx} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -84,7 +84,7 @@ const Concierge: React.FC = () => {
             )}
           </div>
 
-          {/* Input */}
+          {/* input */}
           <div className="p-3 bg-black border-t border-stone-800 flex gap-2">
             <input 
               type="text" 

@@ -12,7 +12,7 @@ export interface Dish {
   price: number;
   type: CourseType;
   pairing?: string;
-  image?: string; // Added for hover reveal effect
+  image?: string; // image used for hover preview
 }
 
 export interface Chef {

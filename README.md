@@ -1,28 +1,28 @@
-# Carta 12 — sitio experimental
+# Carta 12 — experimental site
 
-Experiencia web para el concepto gastronómico mensual de Carta 12. Incluye landing animada, menú dinámico y concierge asistido por Gemini para dudas y reservas.
+Animated landing for the monthly Carta 12 food concept. Includes hero/concept sections, a live menu, and a Gemini-powered concierge for questions and bookings.
 
 ## Stack
 - React + TypeScript (Vite)
-- GSAP para animaciones
-- Tailwind (CDN) para estilos utilitarios
+- GSAP for animation
+- Tailwind (CDN) utilities
 
-## Requisitos
+## Requirements
 - Node.js 18+
-- Llave de API de Gemini (`GEMINI_API_KEY`)
+- Gemini API key (`GEMINI_API_KEY`)
 
-## Cómo correrlo
-1) Instala dependencias: `npm install`  
-2) Crea `.env.local` con `GEMINI_API_KEY=tu_token`  
-3) Arranca en modo dev: `npm run dev`  
-4) Build de producción (salida en `dist/`): `npm run build`
+## Run it
+1) Install deps: `npm install`  
+2) Create `.env.local` with `GEMINI_API_KEY=your_token`  
+3) Start dev server: `npm run dev`  
+4) Build for prod (`dist/`): `npm run build`
 
-## Estructura rápida
-- `constants.ts`: datos del volumen actual y menú.
-- `components/`: hero, concepto, menú, concierge, loader, navbar y footer.
-- `services/geminiService.ts`: llamada al modelo para el concierge.
-- `types.ts`: tipos compartidos para platillos, conceptos y mensajes.
+## Quick map
+- `constants.ts`: current volume data and menu.
+- `components/`: hero, concept, menu, concierge, loader, navbar, footer.
+- `services/geminiService.ts`: concierge call to the model.
+- `types.ts`: shared types for dishes, concepts, and messages.
 
-## Notas
-- Animaciones basadas en GSAP y ScrollTrigger; muchas dependen de breakpoints desktop.
-- El concierge requiere la variable `GEMINI_API_KEY` para responder. Sin ella, solo se verá el saludo inicial.
+## Notes
+- GSAP + ScrollTrigger drive most motion; some effects are desktop-only.
+- Concierge replies need `GEMINI_API_KEY`. Without it, you only see the initial greeting.
